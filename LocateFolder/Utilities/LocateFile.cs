@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 
-namespace LocateFolder.Utilities
+namespace LocateFolder.Utilities 
 {
     internal static class LocateFile
     {
