@@ -3,18 +3,8 @@
 //     Copyright (c) Company.  All rights reserved.
 // </copyright>
 //------------------------------------------------------------------------------
-
-using System;
-using System.ComponentModel.Design;
-using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
-using System.Globalization;
 using System.Runtime.InteropServices;
-using Microsoft.VisualStudio;
-using Microsoft.VisualStudio.OLE.Interop;
 using Microsoft.VisualStudio.Shell;
-using Microsoft.VisualStudio.Shell.Interop;
-using Microsoft.Win32;
 
 namespace LocateFolder
 {
@@ -36,28 +26,11 @@ namespace LocateFolder
     /// </para>
     /// </remarks>
     [PackageRegistration(UseManagedResourcesOnly = true)]
-    [InstalledProductRegistration("#110", "#112", "1.0", IconResourceID = 400)] // Info on this package for Help/About
+    [InstalledProductRegistration("#110", "#112", Vsix.Version, IconResourceID = 400)] // Info on this package for Help/About
     [ProvideMenuResource("Menus.ctmenu", 1)]
-    [Guid(LocateFolderCommandPackage.PackageGuidString)]
-    [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "pkgdef, VS and vsixmanifest are valid VS terms")]
-    public sealed class LocateFolderCommandPackage : Package
+    [Guid(PackageGuids.guidLocateFolderCommandPackageString)]
+    public sealed class VSPackage : Package
     {
-        /// <summary>
-        /// LocateFolderCommandPackage GUID string.
-        /// </summary>
-        public const string PackageGuidString = "a7836cc5-740b-4d5a-8a94-dc9bbc4f7db1";
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LocateFolderCommand"/> class.
-        /// </summary>
-        public LocateFolderCommandPackage()
-        {
-            // Inside this method you can place any initialization code that does not require
-            // any Visual Studio service because at this point the package object is created but
-            // not sited yet inside Visual Studio environment. The place to do all the other
-            // initialization is the Initialize method.
-        }
-
         #region Package Members
 
         /// <summary>
